@@ -19,15 +19,14 @@ class VideoTapeViewController: UIViewController {
     
     private func setupCollectionView() {
         let collectionView = TapeCollectionView()
-        let cvHeight = UIScreen.main.bounds.size.width / 8 * (UIScreen.main.bounds.size.height / UIScreen.main.bounds.size.width)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
         
         collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 500).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: cvHeight).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -250).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: Constants.imageSize.height).isActive = true
         
         self.setupCollectionViewData { (images) in
             collectionView.itemsToDisplay = images
@@ -38,12 +37,12 @@ class VideoTapeViewController: UIViewController {
     }
     
     private func setupCollectionViewData(completion: @escaping ([UIImage]) -> ()) {
-        let size: Int64 = 120
+        let size = Constants.imagesAndScreens.0 * Constants.imagesAndScreens.1
         let url = URL(fileURLWithPath: Constants.videoPath)
         let asset = AVAsset(url: url)
         var images = [UIImage]()
         let times = self.makeCMTimeArray(from: asset, ofSize: size)
-        let imageSize = self.getImageSize(denominator: 8)
+        let imageSize = Constants.imageSize
         let imageGenerator = self.getCustomImageGenerator(from: asset, with: imageSize)
         
         imageGenerator.generateCGImagesAsynchronously(forTimes: times) { (requestedTime, imageRef, actualTime, result, error) in
@@ -80,17 +79,6 @@ class VideoTapeViewController: UIViewController {
         let times = timestampsArray.map { NSValue(time: $0) }
         
         return times
-    }
-    
-    private func getImageSize(denominator: CGFloat) -> CGSize{
-        let width = UIScreen.main.bounds.size.width
-        let height = UIScreen.main.bounds.size.height
-        let ratio = width / height
-        let imageWidth = width / denominator
-        let imageHeight = imageWidth / ratio
-        let frame = CGSize(width: imageWidth, height: imageHeight)
-        
-        return frame
     }
     
     private func getCustomImageGenerator(from asset: AVAsset, with imageSize: CGSize) -> AVAssetImageGenerator {

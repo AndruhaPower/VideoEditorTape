@@ -16,6 +16,8 @@ class Constants {
         return path
     }()
     
+    static let imagesAndScreens: (Int64, Int64) = (6, 16)
+    
     static let imageSize: CGSize = {
         let imagesPerScreen: CGFloat = 6
         let width = UIScreen.main.bounds.size.width
@@ -24,7 +26,7 @@ class Constants {
         let ratio = width / height
         let imageWidth = width / imagesPerScreen
         guard ratio != 0 else { return CGSize.zero }
-        let imageHeight = imageWidth / ratio
+        let imageHeight = imageWidth
         
         let frame = CGSize(width: imageWidth, height: imageHeight)
         return frame
