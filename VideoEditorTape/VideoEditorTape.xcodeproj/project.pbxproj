@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490E653623D60F7400F1CEEE /* TapeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490E653523D60F7400F1CEEE /* TapeCollectionView.swift */; };
+		490E653823D6118F00F1CEEE /* TapeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490E653723D6118F00F1CEEE /* TapeCollectionViewCell.swift */; };
+		490E653A23D63F1600F1CEEE /* cute_puppies.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 490E653923D63F1600F1CEEE /* cute_puppies.mp4 */; };
+		490E653D23D640CA00F1CEEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490E653C23D640CA00F1CEEE /* Constants.swift */; };
+		490E653F23D769BC00F1CEEE /* FillerCollectionVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490E653E23D769BC00F1CEEE /* FillerCollectionVIewCell.swift */; };
 		49EFE0DF23D477620048A94B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFE0DE23D477620048A94B /* AppDelegate.swift */; };
 		49EFE0E123D477620048A94B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFE0E023D477620048A94B /* SceneDelegate.swift */; };
 		49EFE0E323D477620048A94B /* VideoTapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFE0E223D477620048A94B /* VideoTapeViewController.swift */; };
@@ -26,6 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490E653523D60F7400F1CEEE /* TapeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapeCollectionView.swift; sourceTree = "<group>"; };
+		490E653723D6118F00F1CEEE /* TapeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapeCollectionViewCell.swift; sourceTree = "<group>"; };
+		490E653923D63F1600F1CEEE /* cute_puppies.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cute_puppies.mp4; sourceTree = "<group>"; };
+		490E653C23D640CA00F1CEEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		490E653E23D769BC00F1CEEE /* FillerCollectionVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillerCollectionVIewCell.swift; sourceTree = "<group>"; };
 		49EFE0DB23D477620048A94B /* VideoEditorTape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoEditorTape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EFE0DE23D477620048A94B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EFE0E023D477620048A94B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490E653B23D640A600F1CEEE /* SourceData */ = {
+			isa = PBXGroup;
+			children = (
+				490E653923D63F1600F1CEEE /* cute_puppies.mp4 */,
+				490E653C23D640CA00F1CEEE /* Constants.swift */,
+			);
+			path = SourceData;
+			sourceTree = "<group>";
+		};
 		49EFE0D223D477620048A94B = {
 			isa = PBXGroup;
 			children = (
@@ -80,9 +99,13 @@
 				49EFE0DE23D477620048A94B /* AppDelegate.swift */,
 				49EFE0E023D477620048A94B /* SceneDelegate.swift */,
 				49EFE0E223D477620048A94B /* VideoTapeViewController.swift */,
+				490E653523D60F7400F1CEEE /* TapeCollectionView.swift */,
+				490E653723D6118F00F1CEEE /* TapeCollectionViewCell.swift */,
+				490E653E23D769BC00F1CEEE /* FillerCollectionVIewCell.swift */,
 				49EFE0E723D477650048A94B /* Assets.xcassets */,
 				49EFE0E923D477650048A94B /* LaunchScreen.storyboard */,
 				49EFE0EC23D477650048A94B /* Info.plist */,
+				490E653B23D640A600F1CEEE /* SourceData */,
 			);
 			path = VideoEditorTape;
 			sourceTree = "<group>";
@@ -177,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490E653A23D63F1600F1CEEE /* cute_puppies.mp4 in Resources */,
 				49EFE0EB23D477650048A94B /* LaunchScreen.storyboard in Resources */,
 				49EFE0E823D477650048A94B /* Assets.xcassets in Resources */,
 			);
@@ -196,9 +220,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490E653823D6118F00F1CEEE /* TapeCollectionViewCell.swift in Sources */,
+				490E653F23D769BC00F1CEEE /* FillerCollectionVIewCell.swift in Sources */,
+				490E653623D60F7400F1CEEE /* TapeCollectionView.swift in Sources */,
 				49EFE0E323D477620048A94B /* VideoTapeViewController.swift in Sources */,
 				49EFE0DF23D477620048A94B /* AppDelegate.swift in Sources */,
 				49EFE0E123D477620048A94B /* SceneDelegate.swift in Sources */,
+				490E653D23D640CA00F1CEEE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
