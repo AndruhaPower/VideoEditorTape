@@ -13,7 +13,6 @@ class VideoTapeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .darkGray
         self.setupCollectionView()
     }
     
@@ -22,6 +21,7 @@ class VideoTapeViewController: UIViewController {
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
+        self.view.backgroundColor = .black
         
         collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
@@ -82,12 +82,15 @@ class VideoTapeViewController: UIViewController {
     }
     
     private func getCustomImageGenerator(from asset: AVAsset, with imageSize: CGSize) -> AVAssetImageGenerator {
-
         let imageGererator = AVAssetImageGenerator(asset: asset)
         imageGererator.requestedTimeToleranceAfter = CMTime.zero
         imageGererator.requestedTimeToleranceBefore = CMTime.zero
         imageGererator.appliesPreferredTrackTransform = true
         
         return imageGererator
+    }
+    
+    private func setupPlayer() {
+        let player = AVPlayer
     }
 }

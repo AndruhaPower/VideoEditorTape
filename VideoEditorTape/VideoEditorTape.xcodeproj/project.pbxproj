@@ -73,6 +73,24 @@
 			path = SourceData;
 			sourceTree = "<group>";
 		};
+		490E654023D7A26000F1CEEE /* VideoTapeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				49EFE0E223D477620048A94B /* VideoTapeViewController.swift */,
+				490E654123D7A27200F1CEEE /* TapeCollection */,
+			);
+			path = VideoTapeViewController;
+			sourceTree = "<group>";
+		};
+		490E654123D7A27200F1CEEE /* TapeCollection */ = {
+			isa = PBXGroup;
+			children = (
+				490E653523D60F7400F1CEEE /* TapeCollectionView.swift */,
+				490E653723D6118F00F1CEEE /* TapeCollectionViewCell.swift */,
+			);
+			path = TapeCollection;
+			sourceTree = "<group>";
+		};
 		49EFE0D223D477620048A94B = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +114,7 @@
 			children = (
 				49EFE0DE23D477620048A94B /* AppDelegate.swift */,
 				49EFE0E023D477620048A94B /* SceneDelegate.swift */,
-				49EFE0E223D477620048A94B /* VideoTapeViewController.swift */,
-				490E653523D60F7400F1CEEE /* TapeCollectionView.swift */,
-				490E653723D6118F00F1CEEE /* TapeCollectionViewCell.swift */,
+				490E654023D7A26000F1CEEE /* VideoTapeViewController */,
 				49EFE0E723D477650048A94B /* Assets.xcassets */,
 				49EFE0E923D477650048A94B /* LaunchScreen.storyboard */,
 				49EFE0EC23D477650048A94B /* Info.plist */,
