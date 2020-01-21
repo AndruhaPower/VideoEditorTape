@@ -23,8 +23,10 @@ class TapeCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+    }
+    
+    override func prepareForReuse() {
+        self.imageView.image = nil
     }
     
     required init?(coder: NSCoder) {
@@ -38,5 +40,8 @@ class TapeCollectionViewCell: UICollectionViewCell {
         self.imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
         self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
         self.imageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
+        
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
     }
 }
