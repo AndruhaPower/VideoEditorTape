@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+/// Simple ViewController sub-class. Only thing it does it maintaining a collectionView
 class VideoTapeViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -22,7 +23,7 @@ class VideoTapeViewController: UIViewController {
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
-        
+
         collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -250).isActive = true

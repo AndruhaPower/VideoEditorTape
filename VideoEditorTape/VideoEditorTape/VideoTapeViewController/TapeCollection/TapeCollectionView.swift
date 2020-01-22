@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 
+/// CollectionView subClass with FlowLayout that generates an array of images picked from the video
 class TapeCollectionView: UICollectionView {
     
     private var itemsToDisplay = [UIImage]()
@@ -46,6 +47,11 @@ class TapeCollectionView: UICollectionView {
         }
     }
     
+    
+    /// Function created all required objects inside itself  and generated a specific amount of images asynchroniously
+    /// - Parameters:
+    ///   - cellsAmount: amount of image thumbnails  you want to recieve from the video
+    ///   - completion: escaping closure handling the resulting array of images
     private func setupCollectionViewData(cellsAmount: Int, completion: @escaping ([UIImage]) -> ()) {
            let url = URL(fileURLWithPath: Constants.videoPath)
            let asset = AVAsset(url: url)
@@ -71,6 +77,11 @@ class TapeCollectionView: UICollectionView {
            }
        }
     
+    /// Generating function. Makes an array of NSValue objects with specific size
+    /// the step of writing time to array is considered of how many cells are going to be shown in the end.
+    /// - Parameters:
+    ///   - asset: AVAsset object is required for its duration time to generate CMTime -s
+    ///   - withSize: specify the amount of CMTimeobjects you want to generate
     private func makeCMTimeArray(from asset: AVAsset, withSize: Int) -> [NSValue] {
         let duration = asset.duration
         var timestampsArray = [CMTime]()
@@ -86,6 +97,7 @@ class TapeCollectionView: UICollectionView {
         return times
     }
     
+    /// Simple customizating functing
     private func getCustomImageGenerator(from asset: AVAsset) -> AVAssetImageGenerator {
         let imageGererator = AVAssetImageGenerator(asset: asset)
         imageGererator.requestedTimeToleranceAfter = CMTime.zero
@@ -120,8 +132,8 @@ extension TapeCollectionView: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         guard let maxRow =  indexPaths.map({ $0.row }).max()
-        , maxRow > self.itemsToDisplay.count-4 else { return }
-
+        , maxRow > self.itemsToDisplay.count-6 else { return }
+        
         self.setupCollectionViewData(cellsAmount: 1) { [weak self] (images) in
             guard let self = self else { return }
             DispatchQueue.main.async {
