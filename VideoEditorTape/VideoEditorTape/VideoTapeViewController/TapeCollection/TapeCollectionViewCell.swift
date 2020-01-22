@@ -35,13 +35,11 @@ class TapeCollectionViewCell: UICollectionViewCell {
     
     private func setupView() {
         self.contentView.addSubview(self.imageView)
-        
+
         self.imageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
         self.imageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
         self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
         self.imageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
-        
-        self.setNeedsLayout()
-        self.layoutIfNeeded()
+
     }
 }
